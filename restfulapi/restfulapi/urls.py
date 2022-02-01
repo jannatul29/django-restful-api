@@ -21,12 +21,9 @@ from api import views
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    #path('', include(router.urls)),
     path('api/', views.employee_list),
     path('api/<int:pk>/', views.employee_detail),
-    # path('employee/', views.employee_list),
-    # path('employee/<int:pk>/', views.employee_detail),
+    path('api/<str:fullname>/', views.employee_name),
     path('', include(router.urls)),
-    #path('', include('api.urls')),
 ]
 #urlpatterns = format_suffix_patterns(urlpatterns)
