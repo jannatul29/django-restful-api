@@ -104,12 +104,12 @@ def employee_name(request, fullname):
     Retrieve, update or delete a code snippet.
     """
     try:
-        snippet = Employee.objects.get(fullname=fullname)
+        snippet = Employee.objects.filter(fullname=fullname)
     except Employee.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = EmployeeSerializer(snippet)
+        serializer = EmployeeSerializer(snippet, many=True)
         return Response(serializer.data)
 
     elif request.method == 'PUT':
