@@ -27,5 +27,6 @@ urlpatterns = [
     # path('employee/', views.employee_list),
     # path('employee/<int:pk>/', views.employee_detail),
     path('', include(router.urls)),
+    #path('', include('api.urls')),
 ]
 #urlpatterns = format_suffix_patterns(urlpatterns)
